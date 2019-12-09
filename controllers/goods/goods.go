@@ -17,6 +17,10 @@ type Require struct {
 	Data interface{} `json:"data"`
 }
 
+func init()
+{
+
+}
 
 //@api {get} /goods/goodslist/{page:int}/{rows:int}获取商品列表
 func GetGoodsList(ctx iris.Context){

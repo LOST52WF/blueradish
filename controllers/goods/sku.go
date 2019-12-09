@@ -27,7 +27,10 @@ func SkuUpdate(ctx iris.Context){
 	ctx.JSON(Responce{"更新成功",200})
 }
 
-
+func isemptyfunc(){
+	fmt.Println("is a demo")
+	return 
+}
 func SkuDelete(ctx iris.Context){
 	sku_id,err := ctx.PostValueInt("sku_id")
 	if err!=nil{
@@ -40,7 +43,10 @@ func SkuDelete(ctx iris.Context){
 	ctx.JSON(Responce{"删除成功",200})
 }
 
-
+func Skudemo(){
+	fmt.Println("is empty")
+	return 
+}
 func SkuCreate(ctx iris.Context){
 	require := struct{
 		Sku   interface{}

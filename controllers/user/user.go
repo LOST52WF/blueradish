@@ -211,3 +211,8 @@ func Info(ctx iris.Context){
 	//uc.Data["json"] = myresponce
 	ctx.JSON(myresp)
 }
+
+func isdemo()
+{
+	return 
+}

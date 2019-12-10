@@ -27,7 +27,10 @@ func SkuUpdate(ctx iris.Context){
 	ctx.JSON(Responce{"更新成功",200})
 }
 
-
+func isemptyfunc(){
+	fmt.Println("is a demo")
+	return 
+}
 func SkuDelete(ctx iris.Context){
 	sku_id,err := ctx.PostValueInt("sku_id")
 	if err!=nil{

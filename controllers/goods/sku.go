@@ -28,7 +28,8 @@ func SkuUpdate(ctx iris.Context){
 }
 
 func isemptyfunc(){
-	
+	fmt.Println("is a demo")
+	return 
 }
 func SkuDelete(ctx iris.Context){
 	sku_id,err := ctx.PostValueInt("sku_id")

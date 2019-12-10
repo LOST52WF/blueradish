@@ -40,7 +40,9 @@ func SkuDelete(ctx iris.Context){
 	ctx.JSON(Responce{"删除成功",200})
 }
 
-
+func Skudemo(){
+	
+}
 func SkuCreate(ctx iris.Context){
 	require := struct{
 		Sku   interface{}

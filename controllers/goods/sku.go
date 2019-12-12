@@ -47,7 +47,6 @@ func Skudemo(){
 	fmt.Println("is empty")
 	return 
 }
-
 func SkuCreate(ctx iris.Context){
 	require := struct{
 		Sku   interface{}

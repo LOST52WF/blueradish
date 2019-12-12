@@ -36,10 +36,6 @@ func GetUserList(ctx iris.Context) {   //获取用户列表
 		myresp.Resp.Code = 200
 
 	}
-	////log.Println("v:userlist:",userlist)
-	////log.Println(reflect.TypeOf(userlist))
-	//log.Println("v:myrespformap:",myrespformap)
-	//log.Println(reflect.TypeOf(myrespformap))
 	ctx.JSON(myresp)
 }
 
@@ -84,10 +80,7 @@ func Banlist(ctx iris.Context){
 		return
 	}
 	//可以先断言
-	//switch require.Data.(type) {
-		//case []int64 :
 	useridlist,err := require.Data.([]int64)
-	//}
 	if  !err || len(useridlist) == 0{
 		responce.Code = 400
 		responce.Msg  = "数据无效或者无数据"
@@ -120,19 +113,6 @@ func Create(ctx iris.Context){
 	}
 	profile := ctx.PostValue("profile")
 	photo_uri := ctx.PostValue("photo_uri")
-	//num,savepath,err:=tools.UploadFileToServer(ctx)
-	//if num != 0 || err != nil{
-	//	responce.Code = 500
-	//	responce.Msg  = err.Error()
-	//	//ctx.StopExecution()
-	//	ctx.JSON(responce)
-	//	return
-	//}
-	//fileNames,erross := tools.UploadToOSSApi(ctx,savepath,"profile_photo")
-	//if err != nil{
-	//	responce.Code = 500
-	//	responce.Msg  = erross.Error()
-	//}
 	user := models.K_user{Nick_name:nick_name,Gender:int8(gender),Profile:profile,Photo_uri:photo_uri}
 	ok := user.CreateUser(user)
 	if ok != nil{
